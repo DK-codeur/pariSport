@@ -1,0 +1,51 @@
+    <section class="text-center p-2">
+        <div> <h6 class="h6 text-muted"> YoYo pariSport, Votre platforme de pari sportif en ligne </h6> </div>
+        <div>
+            {% if user.is_authenticated %}
+
+            {% else %}
+                <span class="h5 blue-text"> <a href="{% url 'users:login' %}"> connexion </a> | <a href="{% url 'users:register'%}"> inscription</a>  </span>
+            {% endif %}
+
+        </div>
+    </section>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark default-color-dk">
+          <a class="navbar-brand" href="{% url 'home' %}">YoYo pariSport</a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yoyonav"
+            aria-controls="yoyonav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="yoyonav">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"> <a class="nav-link" href="#">Home </a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#">Pari </a> </li>
+{#                <li class="nav-item"> <a class="nav-link" href="#">Mes resultats </a> </li>#}
+            </ul>
+
+          </div>
+
+            <div class="ml-auto"> <!--n right-->
+                {% if user.is_authenticated %}
+                    <div class="dropdown px-2">
+                        <div class="dropdown-toggle" data-toggle="dropdown">
+                            <span> <i class="fa fa-user fa-lg"></i> </span>
+                        </div>
+
+                        <div class="dropdown-menu dropdown-default animated flipInX">
+                            <a href="#" class="dropdown-item"> Mes resultats </a>
+                            <a href="{% url 'users:profile' %}" class="dropdown-item"> Mon compte </a>
+                            <a href="{% url 'users:logout' %}" class="dropdown-item"> Logout </a>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div> <!--end n right-->
+
+        </nav>
+
+    </header>

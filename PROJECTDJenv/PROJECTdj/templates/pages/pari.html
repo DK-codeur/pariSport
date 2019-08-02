@@ -1,0 +1,21 @@
+{% extends "layouts/master.html" %}
+
+{% block body %}
+    <div class="container">
+        <div class="d-flex carre">
+            <div class="eq">
+                <h2>{{ ch.dom }}</h2>
+                <h1 style="font-weight: bold">{{ ch.dom_but }}</h1>
+            </div>
+
+            <div class="eq">
+                <h2>{{ ch.ext }}</h2>
+                <h1 style="font-weight: bold">{{ ch.ext_but }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <h3>
+        <div class="text-danger h3 text-center"> NB: veiller passer dans l'une de nos agence en cas de gain !  </div>
+    </h3>
+{% endblock %}

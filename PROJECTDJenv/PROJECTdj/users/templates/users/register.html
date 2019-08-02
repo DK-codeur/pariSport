@@ -1,0 +1,22 @@
+{% extends "layouts/master.html" %}
+{% load crispy_forms_tags %}
+{% block body %}
+    
+    <div class="container register-page">
+        <form action="" method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Inscrivez-vous en 2 minutes</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="">
+                <button type="submit" class="btn btn-dark-green"> M'inscrire </button>
+            </div>
+        </form>
+
+        <div class="border-top pt-3 text-center">
+            <small> Dejà inscris? <a href="{% url 'users:login' %}" class="ml-2"> connectez-vous ici </a> </small>
+        </div>
+    </div>
+    
+{% endblock %}

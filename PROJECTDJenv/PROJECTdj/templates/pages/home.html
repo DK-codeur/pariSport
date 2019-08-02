@@ -1,0 +1,134 @@
+{% extends "layouts/master.html" %}
+
+{% block body %} 
+    <section class="container page-home">
+        <div class="cover my-5">
+            {% load static %}
+            <h2 class="text-cover">Bienvenue votre pari commence ici !</h2>
+            <div class="text-center explorer"> <a href="#" class="btn btn-dark-green explorer"> Explorer</a> </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-4 text-center">
+                <div class="fav">
+                    <i class="fa fa-futbol fa-4x text-muted"></i> <br><br>
+                    <sapn class="text-fav">100% football</sapn>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 text-center">
+                <div class="fav">
+                    <i class="fa fa-hand-holding-usd fa-4x text-muted"></i> <br><br>
+                    <sapn class="text-fav">100% cash </sapn>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 text-center">
+                <div class="fav">
+                    <i class="fa fa-gift fa-4x text-muted"></i> <br><br>
+                    <sapn class="text-fav">100% Bonus</sapn>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="py-5">
+            <div class="text-center">
+                <h4 class="text-muted h4 h4-responsive"> <span class="une"> PARI </span> DISPONIBLE, EN CE <span class="vous"> MOMENT </span> </h4>
+            </div>
+        </div>
+
+
+
+        <section class="mt-4">
+            <div class="panel">
+                <div class="panel-heading1">
+                    <div> <img src=" {% static 'images/pl.png' %} "> Premier League </div>
+                </div>
+                <div class="panel-body">
+                    <div>
+                    <table class="table table-striped">
+                          <thead>
+                                <tr>
+                                  <th scope="col">Domicile</th>
+                                  <th scope="col">Action</th>
+                                  <th scope="col">Exterieur</th>
+                                </tr>
+                          </thead>
+
+                          <tbody>
+                                {% for battle in battles  %}
+                                    <tr>
+                                      <td scope="row"> <img src="{% static 'images/mu.png' %}"> {{ battle.dom }} </td>
+                                      <td class="score"><a href="pari/{{ battle.id }}" class="btn btn-success"> PARIER </a> </td>
+                                      <td> {{ battle.ext }} <img src="{% static 'images/ch.png' %}"></td>
+                                    </tr>
+                                {% endfor %}
+                                <tr>
+                                      <td scope="row"> <img src="{% static 'images/ars.jpg' %}"> Arsenal </td>
+                                      <td class="score"><a href="pari/2" class="btn btn-success"> PARIER </a> </td>
+                                      <td> Liverpool <img src="{% static 'images/liv.jpg' %}"></td>
+                                </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+         <section class="mt-4">
+            <div class="panel">
+                <div class="panel-heading2">
+                    <div> <img src=" {% static 'images/lg.png' %} "> La liga </div>
+                </div>
+                <div class="panel-body">
+                    <div>
+                    <table class="table table-striped">
+                          <thead>
+                                <tr>
+                                  <th scope="col">Domicile</th>
+                                  <th scope="col">Action</th>
+                                  <th scope="col">Exterieur</th>
+                                </tr>
+                          </thead>
+
+                          <tbody>
+
+                                <tr>
+                                  <td scope="row"> <img src="{% static 'images/bar.jpg' %}"> Barcelone </td>
+                                  <td class="score"><a href="pari/3" class="btn btn-success"> PARIER </a> </td>
+                                  <td> R Madrid <img src="{% static 'images/real.jpg' %}"></td>
+                                </tr>
+
+                                <tr>
+                                  <td scope="row"> <img src="{% static 'images/arl.jpg' %}"> Atletico </td>
+                                  <td class="score"><a href="pari/4" class="btn btn-success"> PARIER </a> </td>
+                                  <td> Espagna <img src="{% static 'images/at2.jpg' %}"></td>
+                                </tr>
+
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </section>
+{% endblock %}
